@@ -79,6 +79,30 @@ h1 {
     background: var(--accent);
 }
 
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contacts a {
+    font-weight: 600;
+    color: var(--accent-text);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+}
+
+.contacts a:hover { color: var(--text); border-color: var(--text); }
+
+.contacts a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 /*Projects*/
 .projects {
     display: flex;
