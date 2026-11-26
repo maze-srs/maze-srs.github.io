@@ -18,30 +18,47 @@
       <p class="meta">2026 - 2 Hour Narrative Game Jam</p>
       <h1>Homebrew Antiques</h1>
     </header>
-
-    <figure class="hero">
-      <img src="images/project1.png" alt="Homebrew Antiques">
-    </figure>
-
     <section class="detail">
-      <h3>The project</h3>
-      <p>Under Construction</p>
-    </section>
 
-    <section class="detail">
-      <h3>My role</h3>
-      <p>Under Construction</p>
-    </section>
-
-    <section class="detail">
       <h3>Tools used</h3>
       <ul class="tools">
         <li><img src="icons/RenPy.png" alt="">Ren'py</li>
       </ul>
     </section>
+    <!--
+    <figure class="hero">
+      <img src="images/project1.png" alt="Homebrew Antiques">
+    </figure>
+    -->
+    <section class="detail">
+      <h3>Mechanism: The Inventory</h3>
+      <p>This was the first time I ever touched Ren'Py. Not being a fan of narrative games, I decided to
+        give the game more interaction by implementing an inventory system, and I made sure that
+        each possible player action got an appropriate reaction from the NPCs.<br></p>
+      <div class="gallery">
+        <img src="images/inventoryNoHover.png"> 
+        <img src="images/inventoryHover.png">
+      </div>
+      <p>The items are not hardcoded in the inventory, but modular, so they can easily be exchanged by modifying a list.<br>
+        The inventory also has a box that shows the name and value of each object.</p>
+    </section>
+
+    <section class="detail">
+      <h3>Mechanism: The Goblin Instincts</h3>
+      <p>The story revolves around a shopkeeper who gets cursed with goblin instincts and desires more and
+        more money and shiny objects as the game progresses. To reflect this, I implemented a goblin meter
+        that can go up or down with each player choice.<br>
+        The end of the game hinges on this meter, with 2 bad endings and 1 good ending.
+      </p>
+      <div class="gallery">
+        <img src="images/endingGood.png"> 
+        <img src="images/endingBad.png"> 
+        <img src="images/endingBadBad.png"> 
+      </div>
+    </section>
 
     <footer class="site-footer">
-      <p>you@example.com</p>
+      <p>martina.ammirati.work@gmail.com</p>
     </footer>
   </main>
 </body>

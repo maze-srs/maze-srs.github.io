@@ -116,13 +116,26 @@ h1 {
 .project {
     display: grid;
     grid-template-columns: 360px minmax(0, 1fr);   /* image first, then text */
-    align-items: center;
-    gap: 48px;
+    grid-template-rows: auto 1fr;                  /* photo row, then the rest */
+    grid-template-areas:
+        "shot  text"
+        "links text";
+    column-gap: 48px;
+    row-gap: 24px;
+    align-items: start;
 }
 
 .project:nth-child(even) {
     grid-template-columns: minmax(0, 1fr) 360px;   /* text first, then image */
+    grid-template-areas:
+        "text shot"
+        "text links";
 }
+
+.shot  { grid-area: shot; }
+.text  { grid-area: text; }
+.links { grid-area: links; }
+
 .detail { margin-bottom: 12px; }
 
 .detail h3 {
@@ -176,7 +189,6 @@ h1 {
 .project .text { text-align: left; }
 
 /*Even rows: [text][image]*/
-.project:nth-child(even) .shot { order: 2; }
 .project:nth-child(even) .text { text-align: right; }
 
 .shot {
@@ -242,8 +254,8 @@ h2 {
     gap: 6px;
 }
 
-/*Flipped rows: links sit on the right, next to the image*/
-.project:nth-child(even) .links { align-items: flex-end; }
+/*Flipped rows: links inside the text sit on the right, next to the image*/
+.project:nth-child(even) .text .links { align-items: flex-end; }
 
 /*Footer*/
 .site-footer {
@@ -262,9 +274,10 @@ h2 {
     .project,
     .project:nth-child(even) {
       grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas: "shot" "text" "links";
       gap: 20px;
     }
-    .project:nth-child(even) .shot { order: 0; }
     .project:nth-child(even) .text { text-align: left; }
     .project:nth-child(even) .text p { margin-left: 0; }
     .project:nth-child(even) .tools { justify-content: flex-start; }

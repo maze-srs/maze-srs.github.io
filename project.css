@@ -48,10 +48,29 @@
 .project-page .detail h3 { display: block; margin: 0 0 8px; }
 .project-page .detail p { display: block; max-width: 62ch; }
 
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: min(1040px, calc(100vw - 48px));   /* wider than the text, never wider than the screen */
+    margin: 40px 0 40px 50%;
+    transform: translateX(-50%);               /* centers it on the page */
+}
+
+.gallery img {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 500px;
+    height: auto;
+    border-radius: 14px;
+}
+
 @media (max-width: 720px) {
     .back {
         position: static;
         display: inline-block;
         margin-bottom: 24px;
     }
+    .gallery { flex-wrap: wrap; }
+    .gallery img { flex: 0 1 calc(50% - 8px); }
 }
